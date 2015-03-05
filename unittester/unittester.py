@@ -10,7 +10,7 @@ import sys
 import unittest
 from optparse import OptionParser
 from pyprofiler import start_profile, end_profile
-from console_utils import console, console_warning, clear_screen
+from consoleprinter import console, console_warning, clear_screen
 
 
 def run_unit_test(class_name=None, methodname=None, caller_globals=None, failfast=True, profile=False, quiet=True):
