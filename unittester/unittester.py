@@ -81,6 +81,9 @@ def run_unit_test(class_name=None, methodname=None, caller_globals=None, failfas
             else:
                 suite = unittest.TestLoader().discover(".")
 
+    if len(suite._tests) == 0:
+        console_warning("Can't find tests, looked in test*.py")
+
     profiletrace = None
 
     if profile is True:
