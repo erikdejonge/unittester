@@ -7,7 +7,7 @@ license: GNU-GPL2
 
 import os
 import sys
-import unittest
+import unittester
 from optparse import OptionParser
 from pyprofiler import start_profile, end_profile
 from console_utils import console, console_warning
@@ -25,7 +25,7 @@ def run_unit_test(class_name=None, methodname=None, caller_globals=None, failfas
     """
 
     # clear_screen()
-    suite = unittest.TestSuite()
+    suite = unittester.TestSuite()
 
     if failfast is None:
         failfast = True
@@ -33,7 +33,7 @@ def run_unit_test(class_name=None, methodname=None, caller_globals=None, failfas
     if methodname and not class_name:
         for i in caller_globals:
             if isinstance(caller_globals[i], type):
-                if issubclass(caller_globals[i], unittest.TestCase):
+                if issubclass(caller_globals[i], unittester.TestCase):
                     for m in dir(caller_globals[i]):
                         if methodname == m:
                             if class_name:
@@ -74,12 +74,12 @@ def run_unit_test(class_name=None, methodname=None, caller_globals=None, failfas
         suite.addTest(cls(methodname))
     else:
         if class_name is not None:
-            suite = unittest.TestLoader().loadTestsFromTestCase(caller_globals[class_name])
+            suite = unittester.TestLoader().loadTestsFromTestCase(caller_globals[class_name])
         else:
             if "TESTDIR" in os.environ:
-                suite = unittest.TestLoader().discover(os.environ["TESTDIR"])
+                suite = unittester.TestLoader().discover(os.environ["TESTDIR"])
             else:
-                suite = unittest.TestLoader().discover(".")
+                suite = unittester.TestLoader().discover(".")
 
     profiletrace = None
 
@@ -88,9 +88,9 @@ def run_unit_test(class_name=None, methodname=None, caller_globals=None, failfas
 
     if quiet is True:
         sbuffer = ""
-        result = unittest.TextTestRunner(failfast=failfast, stream=open("/dev/null", "w"), buffer=sbuffer).run(suite)
+        result = unittester.TextTestRunner(failfast=failfast, stream=open("/dev/null", "w"), buffer=sbuffer).run(suite)
     else:
-        result = unittest.TextTestRunner(failfast=failfast).run(suite)
+        result = unittester.TextTestRunner(failfast=failfast).run(suite)
 
     if profiletrace is not None:
         end_profile(profiletrace, items=50)
@@ -187,7 +187,7 @@ def unit_test_main(caller_globals=None):
 
         for i in caller_globals:
             if isinstance(caller_globals[i], type):
-                if issubclass(caller_globals[i], unittest.TestCase):
+                if issubclass(caller_globals[i], unittester.TestCase):
                     testclasses.append(i)
                     for m in dir(caller_globals[i]):
                         if "test_" in m:
