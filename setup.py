@@ -7,7 +7,7 @@ license: GNU-GPL2
 from setuptools import setup
 setup(name='unittester',
       version='0.1',
-      description='Console printer with linenumbers, stacktraces, logging, conversions and coloring..',
+      description='Run python unit-tests as command-line applications (class and method based).',
       url='https://github.com/erikdejonge/unittester',
       author='Erik de Jonge',
       author_email='erik@a8.nl',
