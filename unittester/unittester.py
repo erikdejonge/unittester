@@ -81,8 +81,13 @@ def run_unit_test(class_name=None, methodname=None, caller_globals=None, failfas
             else:
                 suite = unittest.TestLoader().discover(".")
 
-    if len(suite._tests) == 0:
-        console_warning("Can't find tests, looked in test*.py")
+    try:
+
+        # noinspection PyProtectedMember
+        if len(suite._tests) == 0:
+            console_warning("Can't find tests, looked in test*.py")
+    except BaseException as e:
+        console_warning(e)
 
     profiletrace = None
 

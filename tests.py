@@ -52,6 +52,7 @@ class SampleTestCase2(unittest.TestCase):
         """
         self.assertIsNotNone(self.myvar)
 
+
 def main():
     """
     main
