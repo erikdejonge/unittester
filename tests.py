@@ -7,6 +7,14 @@ license: GNU-GPL2
 from unittester import *
 
 
+def make_exception(s):
+    """
+    @type s: str, unicode
+    @return: None
+    """
+    return int(s)
+
+
 class SampleTestCase(unittest.TestCase):
     """
     @type unittest.TestCase: class
@@ -18,7 +26,7 @@ class SampleTestCase(unittest.TestCase):
         """
         setUp
         """
-        self.myvar = 127
+        self.myvar = "hello"
 
     def test_success(self):
         """
@@ -26,11 +34,11 @@ class SampleTestCase(unittest.TestCase):
         """
         self.assertIsNotNone(self.myvar)
 
-    def test_fail(self):
+    def test_exception(self):
         """
-        test_parse_args
+        test_exception
         """
-        self.assertIsNone(self.myvar)
+        self.assertRaises(ValueError, make_exception, self.myvar)
 
 
 class SampleTestCase2(unittest.TestCase):
