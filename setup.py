@@ -12,7 +12,7 @@ from future import standard_library
 standard_library.install_aliases()
 from setuptools import setup
 setup(name='unittester',
-      version='14',
+      version='15',
       description='Run python unit-tests as command-line applications (class and method based).',
       url='https://github.com/erikdejonge/unittester',
       author='Erik de Jonge',
