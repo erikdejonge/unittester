@@ -5,12 +5,6 @@ Active8 (05-03-15)
 license: GNU-GPL2
 """
 from __future__ import print_function
-from __future__ import unicode_literals
-from __future__ import division
-from __future__ import absolute_import
-from builtins import open
-from future import standard_library
-standard_library.install_aliases()
 from builtins import str
 from builtins import input
 
@@ -60,7 +54,7 @@ def run_unit_test(class_name=None, methodname=None, caller_globals=None, failfas
         if not class_name:
             raise ValueError("run_unit_test:cannot find class for method")
 
-    cl = [os.path.basename(os.getcwdu())]
+    cl = [os.path.basename(os.getcwd())]
 
     if methodname and class_name:
         cl.append(class_name + ":" + methodname)
