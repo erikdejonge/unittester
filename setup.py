@@ -20,4 +20,15 @@ setup(name='unittester',
       license='GPL',
       packages=['unittester'],
       zip_safe=True,
-      install_requires=['consoleprinter', 'pyprofiler'])
+      install_requires=['consoleprinter', 'pyprofiler'],
+      classifiers=[
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Development Status :: Beta",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)",
+          "Operating System :: POSIX",
+          "Topic :: Software Development :: Quality Assurance",
+          "Topic :: Software Development :: Testing"
+          "Topic :: System",
+      ])
