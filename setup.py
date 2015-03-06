@@ -14,4 +14,4 @@ setup(name='unittester',
       license='GPL',
       packages=['unittester'],
       zip_safe=True,
-      install_requires=['pyprofiler'])
+      install_requires=['consoleprinter', 'pyprofiler'])
