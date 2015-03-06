@@ -13,4 +13,5 @@ setup(name='unittester',
       author_email='erik@a8.nl',
       license='GPL',
       packages=['unittester'],
-      zip_safe=True, install_requires=['pyprofiler'])
+      zip_safe=True,
+      install_requires=['pyprofiler'])
