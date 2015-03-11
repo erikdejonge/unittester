@@ -60,7 +60,7 @@ def run_unit_test(class_name=None, methodname=None, caller_globals=None, failfas
         if not class_name:
             raise ValueError("run_unit_test:cannot find class for method")
 
-    cl = [os.path.basename(os.getcwdu())]
+    cl = [os.path.basename(os.getcwd())]
 
     if methodname and class_name:
         cl.append(class_name + ":" + methodname)
