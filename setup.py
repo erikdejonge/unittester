@@ -7,7 +7,7 @@ license: GNU-GPL2
 
 from setuptools import setup
 setup(name='unittester',
-      version='18',
+      version='19',
       description='Run python unit-tests as command-line applications (class and method based).',
       url='https://github.com/erikdejonge/unittester',
       author='Erik de Jonge',
@@ -15,7 +15,7 @@ setup(name='unittester',
       license='GPL',
       packages=['unittester'],
       zip_safe=True,
-      install_requires=['consoleprinter', 'pyprofiler'],
+      #install_requires=['consoleprinter', 'pyprofiler'],
       classifiers=[
           "Programming Language :: Python",
           "Programming Language :: Python :: 3",
