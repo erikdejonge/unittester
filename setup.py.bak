@@ -12,6 +12,6 @@ setup(name='unittester',
       author='Erik de Jonge',
       author_email='erik@a8.nl',
       license='GPL',
-      packages=[b'unittester'],
+      packages=['unittester'],
       zip_safe=True,
       install_requires=['consoleprinter', 'pyprofiler'])
